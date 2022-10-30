@@ -1,7 +1,6 @@
 # Pong in Python 3
 # Author: nscklye
-# Start Date: 10/30/2022
-# Last Update: 10/30/2022
+# Date: 10/30/2022
 
 import turtle
 
