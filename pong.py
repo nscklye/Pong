@@ -7,7 +7,7 @@ import turtle
 
 # Developing the Game Window
 wn = turtle.Screen()
-wn.title('Pong by nscklye')
+wn.title('Pong')
 wn.bgcolor('black')
 wn.setup(height = 720, width = 1280)
 wn.tracer(0)
@@ -33,12 +33,12 @@ pad_b.shapesize(stretch_wid=5, stretch_len=1)
 # Ball
 ball = turtle.Turtle()
 ball.speed(0)
-ball.shape('square')
+ball.shape('circle')
 ball.color('white')
-ball.goto(0,0)
+ball.goto(-10,0)
 ball.penup()
-ball.dx = 2
-ball.dy = 2
+ball.dx = 0.2
+ball.dy = 0.2
 
 # Functions
 def pad_a_up():
@@ -71,3 +71,20 @@ wn.onkeypress(pad_b_down, "Down")
 # Game Loop
 while True:
     wn.update()
+
+    # Move the ball
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
+    # Border checking
+    if ball.ycor() > 350:
+        ball.sety(350)
+        ball.dy *= -1
+    
+    if ball.ycor() < -340:
+        ball.sety(-340)
+        ball.dy *= -1
+    
+    if ball.xcor() > 640:
+        ball.setx(640)
+        ball.goto(0,0)
