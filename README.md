@@ -1,7 +1,8 @@
 # Pong
 
 Just creating a game. Nothing to see here.
-![PONG](/assets/pong.png)
+
+![screenshot](pong.png)
 
 ## How To Launch the Game
 
