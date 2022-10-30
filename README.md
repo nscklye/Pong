@@ -14,6 +14,7 @@ Requires Python 3 installed on your system.
 ### Controls
 
 Left Paddle uses 'W' for up and 'S' for down
+
 Right Paddle uses 'Up' arrow for up and 'Down' arrow for down
 
 ## Resources
