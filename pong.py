@@ -72,6 +72,3 @@ wn.onkeypress(pad_b_down, "Down")
 # Game Loop
 while True:
     wn.update()
-
-    # Move ball
-    ball.setx()
