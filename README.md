@@ -2,7 +2,7 @@
 
 Just creating a game. Nothing to see here.
 
-![screenshot](pong.png)
+![screenshot](assets/pong.png)
 
 ## How To Launch the Game
 
