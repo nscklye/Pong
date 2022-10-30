@@ -35,7 +35,7 @@ ball = turtle.Turtle()
 ball.speed(0)
 ball.shape('circle')
 ball.color('white')
-ball.goto(-10,0)
+ball.goto(0,0)
 ball.penup()
 ball.dx = 0.2
 ball.dy = 0.2
@@ -68,6 +68,20 @@ wn.onkeypress(pad_a_down, "s")
 wn.onkeypress(pad_b_up, "Up")
 wn.onkeypress(pad_b_down, "Down")
 
+# Scores
+score_a = 0
+score_b = 0
+
+# Scoreboard
+sb = turtle.Turtle()
+sb.speed(0)
+sb.color('white')
+sb.penup()
+sb.hideturtle()
+sb.goto(0,260)
+sb.write(f'Player A: {score_a}  Player B: {score_b}', align='center', font=('Courier', 24, 'bold'))
+
+
 # Game Loop
 while True:
     wn.update()
@@ -86,5 +100,24 @@ while True:
         ball.dy *= -1
     
     if ball.xcor() > 640:
-        ball.setx(640)
         ball.goto(0,0)
+        ball.dx *= -1
+        score_a += 1
+        sb.clear()
+        sb.write(f'Player A: {score_a}  Player B: {score_b}', align='center', font=('Courier', 24, 'bold'))
+
+    if ball.xcor() < -640:
+        ball.goto(0,0)
+        ball.dx *= -1
+        score_b += 1
+        sb.clear()
+        sb.write(f'Player A: {score_a}  Player B: {score_b}', align='center', font=('Courier', 24, 'bold'))
+
+    # Ball a Paddle Collision
+    if (ball.xcor() > 590 and ball.xcor() < 600) and (ball.ycor() <= pad_b.ycor() + 50 and ball.ycor() >= pad_b.ycor() - 50):
+        ball.setx(590)
+        ball.dx *= -1
+
+    if (ball.xcor() < -590 and ball.xcor() > -600) and (ball.ycor() <= pad_a.ycor() + 50 and ball.ycor() >= pad_a.ycor() - 50):
+        ball.setx(-590)
+        ball.dx *= -1
