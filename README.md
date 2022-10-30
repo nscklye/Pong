@@ -1,7 +1,7 @@
 # Pong
 
 Just creating a game. Nothing to see here.
-![PONG](https://github.com/nscklye/Pong/blob/master/assets/pong.py)
+![PONG](/assets/pong.png)
 
 ## How To Launch the Game
 
