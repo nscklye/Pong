@@ -2,7 +2,6 @@
 # Author: nscklye
 # Start Date: 10/30/2022
 # Last Update: 10/30/2022
-# Resources: https://docs.python.org/3/library/turtle.html?highlight=title#
 
 import turtle
 
